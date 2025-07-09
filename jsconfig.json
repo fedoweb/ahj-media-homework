@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    
+    "baseUrl": "./", // Базовый URL для разрешения модулей (относительно этого пути будут разрешаться импорты)
+
+    "paths": {
+      "@/*": ["src/*"] // Система псевдонимов для путей импорта (позволяет использовать @ вместо src/) Пример: import Component from '@/components/Component'
+    },
+
+    "lib": [
+      "ES2022",  // Подключает типы для ECMAScript 2022 (Array.at(), Object.hasOwn() и т.д.)
+      "DOM"      // Добавляет типы для браузерного API (document, window, HTMLElement и т.д.)
+    ],
+
+    "types": ["node", "jest", "jsdom"], // Добавляет типы для Node.js (process, require, __dirname и т.д.)
+
+    "target": "ES2022", // Генерирует код, совместимый со стандартом ES2022
+
+    "module": "ESNext", // Использование ES-модулей
+
+    "strict": false,          // Включает все strict-настройки
+
+    "checkJs": false, // Если true - включает строгую проверку типов для .js файлов
+
+    "noImplicitAny": false,   // Запрещает неявное использование any
+
+    "noUnusedLocals": false,  // Ошибка на неиспользуемые переменные
+
+    "strictNullChecks": false, // Запрещает неявное присвоение null/undefined
+
+    "allowSyntheticDefaultImports": true, // Позволяет import React from 'react' вместо import * as React from 'react'
+
+    "jsx": "preserve" // Оставляет JSX-синтаксис как есть (для последующей обработки Babel и т.д.)
+  },
+  "exclude": [
+    "node_modules", // Игнорировать npm-пакеты
+    "dist",         // Игнорировать директорию сборки
+    "build",        // Игнорировать директорию билда
+    "**/__tests__/*", // Игнорировать все тестовые файлы
+    "e2e"           // Игнорировать end-to-end тесты
+  ],
+  "include": [
+    "src/**/*" // Анализировать все файлы внутри src и его поддиректорий
+  ]
+}

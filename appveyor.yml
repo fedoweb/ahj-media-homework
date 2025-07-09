@@ -1,0 +1,23 @@
+version: 1.0.{build}
+image: Ubuntu2004
+environment:
+  nodejs_version: "18"
+  GITHUB_TOKEN:
+    secure: 2YjVzBsSXLSSFG4rX5qAPqRr2vbfr1EcYFeIwAdV6hZyCVFcoV2PNG3R/BbdeJf7
+
+install:
+  - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  - export NVM_DIR="$HOME/.nvm"
+  - nvm install $nodejs_version
+  - npm install
+  - npm install webpack webpack-cli gh-pages --save-dev
+
+build_script:
+  - npm run build
+  - ls -R dist  # Проверка содержимого папки dist
+
+on_success:
+  - git config --global user.email "appveyor@example.com"
+  - git config --global user.name "Appveyor CI"
+  - git remote set-url origin https://$GITHUB_TOKEN@github.com/fedoweb/ahj-media-homework.git
+  - npx gh-pages -d dist -r https://$GITHUB_TOKEN@github.com/fedoweb/ahj-media-homework.git
