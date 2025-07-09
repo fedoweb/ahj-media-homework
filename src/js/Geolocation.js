@@ -80,6 +80,9 @@ export default class Geolocation {
     this.form.remove();
 
     this.rejectPosition(new Error("Пользователь отменил ввод координат"));
+
+    const input = this.container.querySelector('.form_text');
+    input.value = '';
   }
 
   onSubmit = (e) => {
