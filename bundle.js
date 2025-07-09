@@ -597,6 +597,8 @@ var Geolocation = /*#__PURE__*/function () {
       e.preventDefault();
       _this.form.remove();
       _this.rejectPosition(new Error("Пользователь отменил ввод координат"));
+      var input = _this.container.querySelector('.form_text');
+      input.value = '';
     });
     _defineProperty(this, "onSubmit", function (e) {
       e.preventDefault();
