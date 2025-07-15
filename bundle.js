@@ -27,6 +27,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 }
 
 .line_container {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 95vh;
@@ -124,7 +125,50 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   border: 1px solid gray;
   background-color: white;
   border-radius: 5px;
-}`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA;EACE,yCAAyC;EACzC,WAAW;AACb;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,YAAY;AACd;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,SAAS;EACT,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,QAAQ;EACR,aAAa;EACb,sBAAsB;EACtB,mBAAmB;AACrB;;AAEA;EACE,iBAAiB;EACjB,eAAe;EACf,sBAAsB;AACxB;;AAEA;EACE,kBAAkB;EAClB,aAAa;EACb,gBAAgB;EAChB,gBAAgB;;AAElB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,sBAAsB;EACtB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,QAAQ;EACR,WAAW;AACb;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,uBAAuB;EACvB,sBAAsB;EACtB,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,gCAAgC;EAChC,sBAAsB;EACtB,SAAS;;EAET,gBAAgB;EAChB,uBAAuB;AACzB;;AAEA;EACE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,cAAc;EACd,mBAAmB;AACrB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,iBAAiB;EACjB,eAAe;AACjB;;AAEA;EACE,cAAc;EACd,YAAY;EACZ,sBAAsB;EACtB,uBAAuB;EACvB,kBAAkB;AACpB","sourcesContent":["body {\n  font-family: Arial, Helvetica, sans-serif;\n  color: gray;\n}\n\n.line_container {\n  display: flex;\n  flex-direction: column;\n  height: 95vh;\n}\n\n.line_list {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  max-height: 90%;\n  overflow: scroll;\n}\n\n.line_item {\n  display: flex;\n  gap: 5px;\n  padding: 10px;\n  border: 1px solid gray;\n  border-radius: 10px;\n}\n\n.line_time {\n  margin-left: auto;\n  margin-right: 0;\n  min-width: fit-content;\n}\n\n.line_form {\n  position: relative;\n  display: flex;\n  margin-top: auto;\n  margin-bottom: 0;\n  \n}\n\n.form_text {\n  width: 100%;\n  height: 40px;\n  border: 1px solid gray;\n  border-radius: 10px;\n}\n\n.btn_container {\n  position: absolute;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  top: 7px;\n  right: 10px;\n}\n\n.btn {\n  width: 30px;\n  height: 30px;\n  background-color: white;\n  border: 1px solid gray;\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.custom_geolocation {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  flex-direction: column;\n  gap: 10px;\n\n  max-width: 400px;\n  background-color: white;\n}\n\n.custom_geolocation_text {\n  margin: 0;\n  padding: 0;\n}\n\n.custom_geolocation_content {\n  color: inherit;\n  font-style: inherit;\n}\n\n.custom_geolocation_content::placeholder {\n  color: lightgray;\n}\n\n.custom_geolocation_btn {\n  margin-left: auto;\n  margin-right: 0;\n}\n\n.geolocation_btn {\n  color: inherit;\n  padding: 5px;\n  border: 1px solid gray;\n  background-color: white;\n  border-radius: 5px;\n}"],"sourceRoot":""}]);
+}
+
+.media_modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  gap: 10px;
+
+  max-width: 400px;
+  background-color: white;
+}
+
+.media_modal_text {
+  margin: 0;
+  padding: 0;
+}
+
+.submit_btn {
+  color: inherit;
+  padding: 5px;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.preview_container {
+  position: absolute; 
+  display: flex;
+  width: 100%;
+  padding: 5px;
+  bottom: 37px; 
+  box-sizing: border-box;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+}
+
+.preview_video {
+  max-height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA;EACE,yCAAyC;EACzC,WAAW;AACb;;AAEA;EACE,kBAAkB;EAClB,aAAa;EACb,sBAAsB;EACtB,YAAY;AACd;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,SAAS;EACT,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,QAAQ;EACR,aAAa;EACb,sBAAsB;EACtB,mBAAmB;AACrB;;AAEA;EACE,iBAAiB;EACjB,eAAe;EACf,sBAAsB;AACxB;;AAEA;EACE,kBAAkB;EAClB,aAAa;EACb,gBAAgB;EAChB,gBAAgB;;AAElB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,sBAAsB;EACtB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,QAAQ;EACR,WAAW;AACb;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,uBAAuB;EACvB,sBAAsB;EACtB,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,gCAAgC;EAChC,sBAAsB;EACtB,SAAS;;EAET,gBAAgB;EAChB,uBAAuB;AACzB;;AAEA;EACE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,cAAc;EACd,mBAAmB;AACrB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,iBAAiB;EACjB,eAAe;AACjB;;AAEA;EACE,cAAc;EACd,YAAY;EACZ,sBAAsB;EACtB,uBAAuB;EACvB,kBAAkB;AACpB;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,gCAAgC;EAChC,sBAAsB;EACtB,SAAS;;EAET,gBAAgB;EAChB,uBAAuB;AACzB;;AAEA;EACE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,cAAc;EACd,YAAY;EACZ,sBAAsB;EACtB,uBAAuB;EACvB,kBAAkB;AACpB;;AAEA;EACE,kBAAkB;EAClB,aAAa;EACb,WAAW;EACX,YAAY;EACZ,YAAY;EACZ,sBAAsB;EACtB,sBAAsB;EACtB,uBAAuB;EACvB,0BAA0B;AAC5B;;AAEA;EACE,iBAAiB;EACjB,iBAAiB;EACjB,kBAAkB;AACpB","sourcesContent":["body {\n  font-family: Arial, Helvetica, sans-serif;\n  color: gray;\n}\n\n.line_container {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  height: 95vh;\n}\n\n.line_list {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  max-height: 90%;\n  overflow: scroll;\n}\n\n.line_item {\n  display: flex;\n  gap: 5px;\n  padding: 10px;\n  border: 1px solid gray;\n  border-radius: 10px;\n}\n\n.line_time {\n  margin-left: auto;\n  margin-right: 0;\n  min-width: fit-content;\n}\n\n.line_form {\n  position: relative;\n  display: flex;\n  margin-top: auto;\n  margin-bottom: 0;\n  \n}\n\n.form_text {\n  width: 100%;\n  height: 40px;\n  border: 1px solid gray;\n  border-radius: 10px;\n}\n\n.btn_container {\n  position: absolute;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  top: 7px;\n  right: 10px;\n}\n\n.btn {\n  width: 30px;\n  height: 30px;\n  background-color: white;\n  border: 1px solid gray;\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.custom_geolocation {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  flex-direction: column;\n  gap: 10px;\n\n  max-width: 400px;\n  background-color: white;\n}\n\n.custom_geolocation_text {\n  margin: 0;\n  padding: 0;\n}\n\n.custom_geolocation_content {\n  color: inherit;\n  font-style: inherit;\n}\n\n.custom_geolocation_content::placeholder {\n  color: lightgray;\n}\n\n.custom_geolocation_btn {\n  margin-left: auto;\n  margin-right: 0;\n}\n\n.geolocation_btn {\n  color: inherit;\n  padding: 5px;\n  border: 1px solid gray;\n  background-color: white;\n  border-radius: 5px;\n}\n\n.media_modal {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  flex-direction: column;\n  gap: 10px;\n\n  max-width: 400px;\n  background-color: white;\n}\n\n.media_modal_text {\n  margin: 0;\n  padding: 0;\n}\n\n.submit_btn {\n  color: inherit;\n  padding: 5px;\n  border: 1px solid gray;\n  background-color: white;\n  border-radius: 5px;\n}\n\n.preview_container {\n  position: absolute; \n  display: flex;\n  width: 100%;\n  padding: 5px;\n  bottom: 37px; \n  box-sizing: border-box;\n  border: 1px solid gray;\n  background-color: white;\n  border-radius: 5px 5px 0 0;\n}\n\n.preview_video {\n  max-height: 200px;\n  margin-left: auto;\n  margin-right: auto;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -623,8 +667,8 @@ var Geolocation = /*#__PURE__*/function () {
     this.form = null;
     this.input = null;
     this.position = null;
-    this.resolvePosition = null; // Для разрешения промиса
-    this.rejectPosition = null; // Для отклонения промиса
+    this.resolvePosition = null;
+    this.rejectPosition = null;
   }
   return _createClass(Geolocation, [{
     key: "get",
@@ -679,10 +723,8 @@ var Geolocation = /*#__PURE__*/function () {
           reject(error);
         }, {
           enableHighAccuracy: true,
-          // Высокая точность (GPS)
           timeout: 10000,
-          // Макс. время ожидания (10 сек)
-          maximumAge: 0 // Запрет кэширования
+          maximumAge: 0
         });
       });
     }
@@ -691,11 +733,8 @@ var Geolocation = /*#__PURE__*/function () {
     value: function getCustomPosition() {
       var _this3 = this;
       return new Promise(function (resolve, reject) {
-        // Сохраняем функции разрешения/отклонения
         _this3.resolvePosition = resolve;
         _this3.rejectPosition = reject;
-
-        // Открываем модальное окно
         _this3.openModal();
       });
     }
@@ -771,114 +810,180 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 var Media = /*#__PURE__*/function () {
   function Media() {
-    var _this = this;
     _classCallCheck(this, Media);
-    _defineProperty(this, "onRecordingStop", function (e) {
-      var audioBlob = new Blob(_this.recordedChunks, {
-        type: 'audio/webm'
-      });
-      return {
-        blob: audioBlob,
-        url: URL.createObjectURL(audioBlob),
-        duration: _this.recordedSeconds
-      };
-    });
     this.storage = [];
-    this.audioRecorder = null;
+    this.mediaRecorder = null;
     this.mediaStream = null;
     this.recordedChunks = [];
     this.recordingTimer = null;
     this.recordedSeconds = 0;
     this.container = null;
+    this.currentType = null;
+    this.videoPreview = null;
   }
   return _createClass(Media, [{
-    key: "startAudioRecording",
+    key: "startRecording",
     value: function () {
-      var _startAudioRecording = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(container, type) {
-        var _this2 = this;
+      var _startRecording = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(container, type) {
+        var _this = this;
+        var mediaOptions;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               _context.prev = 0;
-              this.container = container;
-              this.recordedChunks = [];
-              this.recordedSeconds = 0;
-              if (!(type === 'audio')) {
-                _context.next = 15;
+              if (window.MediaRecorder) {
+                _context.next = 3;
                 break;
               }
-              _context.next = 7;
-              return navigator.mediaDevices.getUserMedia({
+              throw Error('Браузер не поддерживает запись медиа');
+            case 3:
+              this.container = container;
+              this.currentType = type;
+              this.recordedChunks = [];
+              this.recordedSeconds = 0;
+              if (type === 'audio') mediaOptions = {
                 audio: true
-              });
-            case 7:
+              };
+              if (type === 'video') mediaOptions = {
+                audio: true,
+                video: true
+              };
+              _context.next = 11;
+              return navigator.mediaDevices.getUserMedia(mediaOptions);
+            case 11:
               this.mediaStream = _context.sent;
-              this.audioRecorder = new MediaRecorder(this.mediaStream);
-              this.audioRecorder.addEventListener('dataavailable', function (e) {
-                _this2.recordedChunks.push(e.data);
+              this.mediaRecorder = new MediaRecorder(this.mediaStream);
+              this.mediaRecorder.addEventListener('dataavailable', function (e) {
+                _this.recordedChunks.push(e.data);
               });
-              this.audioRecorder.addEventListener('stop', function (e) {
-                return _this2.onRecordingStop;
-              });
-              this.audioRecorder.start();
+              this.mediaRecorder.start();
               this.renderMediaButtons();
               this.startTimer();
+              if (type === 'video') {
+                this.createVideoPreview();
+              }
               return _context.abrupt("return", true);
-            case 15:
-              _context.next = 21;
-              break;
-            case 17:
-              _context.prev = 17;
-              _context.t0 = _context["catch"](0);
-              console.error("Ошибка доступа к микрофону:", _context.t0);
-              return _context.abrupt("return", false);
             case 21:
+              _context.prev = 21;
+              _context.t0 = _context["catch"](0);
+              this.openModal();
+              console.error("Ошибка доступа:", _context.t0);
+              return _context.abrupt("return", false);
+            case 26:
             case "end":
               return _context.stop();
           }
-        }, _callee, this, [[0, 17]]);
+        }, _callee, this, [[0, 21]]);
       }));
-      function startAudioRecording(_x, _x2) {
-        return _startAudioRecording.apply(this, arguments);
+      function startRecording(_x, _x2) {
+        return _startRecording.apply(this, arguments);
       }
-      return startAudioRecording;
+      return startRecording;
     }()
   }, {
-    key: "stopAudioRecording",
-    value: function stopAudioRecording() {
-      var save = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-      if (this.audioRecorder && this.audioRecorder.state !== 'inactive') {
-        this.audioRecorder.stop();
+    key: "stopRecording",
+    value: function () {
+      var _stopRecording = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+        var _this2 = this;
+        var save,
+          _args2 = arguments;
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
+            case 0:
+              save = _args2.length > 0 && _args2[0] !== undefined ? _args2[0] : false;
+              if (!(this.mediaRecorder && this.mediaRecorder.state !== 'inactive')) {
+                _context2.next = 3;
+                break;
+              }
+              return _context2.abrupt("return", new Promise(function (resolve) {
+                _this2.mediaRecorder.addEventListener('stop', function () {
+                  return resolve();
+                });
+                _this2.mediaRecorder.stop();
+              }));
+            case 3:
+              if (this.mediaStream) {
+                this.mediaStream.getTracks().forEach(function (track) {
+                  return track.stop();
+                });
+                this.mediaStream = null;
+              }
+              if (save) {
+                _context2.next = 7;
+                break;
+              }
+              this.recordedChunks = [];
+              return _context2.abrupt("return", null);
+            case 7:
+            case "end":
+              return _context2.stop();
+          }
+        }, _callee2, this);
+      }));
+      function stopRecording() {
+        return _stopRecording.apply(this, arguments);
       }
-      if (this.mediaStream) {
-        this.mediaStream.getTracks().forEach(function (track) {
-          return track.stop();
-        });
-        this.mediaStream = null;
-      }
+      return stopRecording;
+    }()
+  }, {
+    key: "getRecordedMedia",
+    value: function getRecordedMedia() {
+      if (this.recordedChunks.length === 0) return null;
+      this.removeVideoPreview();
       this.stopTimer();
-      if (!save) {
-        this.recordedChunks = [];
-      }
-      return save ? this.getRecordedAudio() : null;
+      var mediaType;
+      if (this.currentType === 'audio') mediaType = {
+        type: 'audio/webm'
+      };
+      if (this.currentType === 'video') mediaType = {
+        type: 'video/webm'
+      };
+      var mediaBlob = new Blob(this.recordedChunks, mediaType);
+      return {
+        blob: mediaBlob,
+        url: URL.createObjectURL(mediaBlob),
+        duration: this.recordedSeconds,
+        type: this.currentType
+      };
     }
   }, {
-    key: "getRecordedAudio",
-    value: function getRecordedAudio() {
-      if (this.recordedChunks.length === 0) return null;
-      var audioBlob = new Blob(this.recordedChunks, {
-        type: 'audio/webm'
+    key: "createVideoPreview",
+    value: function createVideoPreview() {
+      var form = document.querySelector('.line_form');
+      this.previewContainer = document.createElement('div');
+      this.previewContainer.classList.add('preview_container');
+      form.parentNode.insertBefore(this.previewContainer, form);
+      this.videoPreview = document.createElement('video');
+      this.videoPreview.classList.add('preview_video');
+      this.videoPreview.srcObject = this.mediaStream;
+      this.videoPreview.autoplay = true;
+      this.videoPreview.muted = true;
+      this.videoPreview.playsInline = true;
+      this.previewContainer.append(this.videoPreview);
+    }
+  }, {
+    key: "removeVideoPreview",
+    value: function removeVideoPreview() {
+      if (this.videoPreview) {
+        this.previewContainer.remove();
+        this.previewContainer = null;
+        this.videoPreview = null;
+      }
+    }
+  }, {
+    key: "openModal",
+    value: function openModal() {
+      document.body.insertAdjacentHTML('afterbegin', this.renderModal());
+      var form = document.querySelector('.media_modal');
+      var btn = document.querySelector('.submit_btn');
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        form.remove();
       });
-      return {
-        blob: audioBlob,
-        url: URL.createObjectURL(audioBlob),
-        duration: this.recordedSeconds
-      };
     }
   }, {
     key: "startTimer",
@@ -913,6 +1018,11 @@ var Media = /*#__PURE__*/function () {
     value: function renderMediaButtons() {
       if (!this.container) return;
       this.container.innerHTML = "\n      <button class=\"form_ok btn\">\u2714\uFE0F</button>\n      <span class=\"timer\">00:00</span>\n      <button class=\"form_cancel btn\">\u2716\uFE0F</button>\n    ";
+    }
+  }, {
+    key: "renderModal",
+    value: function renderModal() {
+      return "\n      <form action=\"\" class=\"media_modal line_item\">\n        <p class=\"media_modal_text\">\u0427\u0442\u043E-\u0442\u043E \u043F\u043E\u0448\u043B\u043E \u043D\u0435 \u0442\u0430\u043A...</p>\n        <p class=\"media_modal_text\">\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u043D\u0430\u043C \u043D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0434\u043E\u0441\u0442\u0443\u043F \u043A\n        \u043C\u0438\u043A\u0440\u043E\u0444\u043E\u043D\u0443 \u0438\u043B\u0438 \u043A\u0430\u043C\u0435\u0440\u0435, \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E, \u0431\u0440\u0430\u0443\u0437\u0435\u0440 \u043D\u0435 \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u0437\u0430\u043F\u0438\u0441\u044C \u043C\u0435\u0434\u0438\u0430 \u0438\u043B\u0438\n        \u0432\u044B \u043D\u0435 \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u0438\u043B\u0438 \u0434\u043E\u0441\u0442\u0443\u043F.</p>\n        <div class=\"media_modal_btn\">\n          <button class=\"submit_btn\" type=\"submit\">\u041E\u041A</button>\n        </div>   \n      </form>\n    ";
     }
   }]);
 }();
@@ -959,7 +1069,7 @@ var TimeLine = /*#__PURE__*/function () {
                 break;
               }
               _context.next = 4;
-              return _this.media.startAudioRecording(_this.btnContainer, 'audio');
+              return _this.media.startRecording(_this.btnContainer, 'audio');
             case 4:
               return _context.abrupt("return");
             case 5:
@@ -968,7 +1078,7 @@ var TimeLine = /*#__PURE__*/function () {
                 break;
               }
               _context.next = 8;
-              return _this.media.startAudioRecording(_this.btnContainer, 'video');
+              return _this.media.startRecording(_this.btnContainer, 'video');
             case 8:
               return _context.abrupt("return");
             case 9:
@@ -977,12 +1087,12 @@ var TimeLine = /*#__PURE__*/function () {
                 break;
               }
               _context.next = 12;
-              return _this.handleAudioSave();
+              return _this.handleMediaSave();
             case 12:
               return _context.abrupt("return");
             case 13:
               if (e.target.classList.contains('form_cancel')) {
-                _this.media.stopAudioRecording(false);
+                _this.media.stopRecording(false);
                 _this.renderDefaultButtons();
               }
             case 14:
@@ -1026,7 +1136,6 @@ var TimeLine = /*#__PURE__*/function () {
               _context2.prev = 13;
               _context2.t0 = _context2["catch"](5);
               console.error("Не удалось получить координаты:", _context2.t0.message);
-              // Дополнительная обработка ошибки (например, показать уведомление)
             case 16:
             case "end":
               return _context2.stop();
@@ -1064,48 +1173,44 @@ var TimeLine = /*#__PURE__*/function () {
       this.container.insertAdjacentHTML('beforeend', html);
     }
   }, {
-    key: "handleAudioSave",
+    key: "handleMediaSave",
     value: function () {
-      var _handleAudioSave = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-        var audioData, position;
+      var _handleMediaSave = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+        var mediaData, position;
         return _regeneratorRuntime().wrap(function _callee3$(_context3) {
           while (1) switch (_context3.prev = _context3.next) {
             case 0:
-              // Останавливаем запись и получаем аудио
-              audioData = this.media.stopAudioRecording(true);
-              if (audioData) {
-                _context3.next = 3;
-                break;
-              }
-              return _context3.abrupt("return");
+              _context3.prev = 0;
+              _context3.next = 3;
+              return this.media.stopRecording(true);
             case 3:
-              _context3.prev = 3;
+              mediaData = this.media.getRecordedMedia();
               _context3.next = 6;
               return this.geolocation.get();
             case 6:
               position = _context3.sent;
-              // Добавляем аудио-сообщение в ленту
-              this.renderAudioItem(audioData, position);
-
-              // Восстанавливаем кнопки
-              this.renderDefaultButtons();
-              _context3.next = 15;
+              if (mediaData.type === 'audio') this.renderAudioItem(mediaData, position);
+              if (mediaData.type === 'video') this.renderVideoItem(mediaData, position);
+              _context3.next = 14;
               break;
             case 11:
               _context3.prev = 11;
-              _context3.t0 = _context3["catch"](3);
-              console.error("Ошибка добавления аудио:", _context3.t0);
+              _context3.t0 = _context3["catch"](0);
+              console.error("Ошибка добавления медиа:", _context3.t0);
+            case 14:
+              _context3.prev = 14;
               this.renderDefaultButtons();
-            case 15:
+              return _context3.finish(14);
+            case 17:
             case "end":
               return _context3.stop();
           }
-        }, _callee3, this, [[3, 11]]);
+        }, _callee3, this, [[0, 11, 14, 17]]);
       }));
-      function handleAudioSave() {
-        return _handleAudioSave.apply(this, arguments);
+      function handleMediaSave() {
+        return _handleMediaSave.apply(this, arguments);
       }
-      return handleAudioSave;
+      return handleMediaSave;
     }()
   }, {
     key: "renderItem",
@@ -1150,6 +1255,28 @@ var TimeLine = /*#__PURE__*/function () {
         return _renderAudioItem.apply(this, arguments);
       }
       return renderAudioItem;
+    }()
+  }, {
+    key: "renderVideoItem",
+    value: function () {
+      var _renderVideoItem = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee6(videoData, position) {
+        var date, item;
+        return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+          while (1) switch (_context6.prev = _context6.next) {
+            case 0:
+              date = this.getDate();
+              item = "\n      <div class=\"line_item\">\n        <div class=\"line_content\">\n          <video controls class=\"video-player\" poster=\"\" style=\"max-width: 100%;\">\n            <source src=\"".concat(videoData.url, "\" type=\"video/webm\">\n            \u0412\u0430\u0448 \u0431\u0440\u0430\u0443\u0437\u0435\u0440 \u043D\u0435 \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u0432\u0438\u0434\u0435\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B.\n          </video>\n          <div class=\"media-duration\">").concat(this.formatDuration(videoData.duration), "</div>\n          <div class=\"line_geolocation\">\n            [").concat(position.latitude, ", ").concat(position.longitude, "] \uD83D\uDC41\uFE0F\n          </div>\n        </div>\n        <div class=\"line_time\">").concat(date, "</div>\n      </div>\n    ");
+              this.lineList.insertAdjacentHTML('afterbegin', item);
+            case 3:
+            case "end":
+              return _context6.stop();
+          }
+        }, _callee6, this);
+      }));
+      function renderVideoItem(_x7, _x8) {
+        return _renderVideoItem.apply(this, arguments);
+      }
+      return renderVideoItem;
     }()
   }, {
     key: "formatDuration",
