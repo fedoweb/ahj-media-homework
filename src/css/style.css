@@ -4,6 +4,7 @@ body {
 }
 
 .line_container {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 95vh;
@@ -101,4 +102,47 @@ body {
   border: 1px solid gray;
   background-color: white;
   border-radius: 5px;
+}
+
+.media_modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  gap: 10px;
+
+  max-width: 400px;
+  background-color: white;
+}
+
+.media_modal_text {
+  margin: 0;
+  padding: 0;
+}
+
+.submit_btn {
+  color: inherit;
+  padding: 5px;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.preview_container {
+  position: absolute; 
+  display: flex;
+  width: 100%;
+  padding: 5px;
+  bottom: 37px; 
+  box-sizing: border-box;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+}
+
+.preview_video {
+  max-height: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }

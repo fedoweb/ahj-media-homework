@@ -32,22 +32,22 @@ export default class TimeLine {
     e.preventDefault();
 
     if (e.target.classList.contains('form_audio')) {
-      await this.media.startAudioRecording(this.btnContainer, 'audio');
+      await this.media.startRecording(this.btnContainer, 'audio');
       return;
     }
 
     if (e.target.classList.contains('form_video')) {
-      await this.media.startAudioRecording(this.btnContainer, 'video');
+      await this.media.startRecording(this.btnContainer, 'video');
       return;
     }
 
     if (e.target.classList.contains('form_ok')) {
-      await this.handleAudioSave();
+      await this.handleMediaSave();
       return;
     }
 
     if (e.target.classList.contains('form_cancel')) {
-      this.media.stopAudioRecording(false);
+      this.media.stopRecording(false);
       this.renderDefaultButtons();
     }
   }
@@ -60,16 +60,14 @@ export default class TimeLine {
       if (!text) return;
 
       try {
-        // Получаем координаты (автоматически или вручную)
         const position = await this.geolocation.get();
         this.renderItem(text, position);
         this.input.value = '';
+
       } catch (error) {
         console.error("Не удалось получить координаты:", error.message);
-        // Дополнительная обработка ошибки (например, показать уведомление)
       }
     } 
-
   }
 
   renderTimeLine() {
@@ -87,23 +85,20 @@ export default class TimeLine {
     this.container.insertAdjacentHTML('beforeend', html);
   }
 
-  async handleAudioSave() {
-    // Останавливаем запись и получаем аудио
-    const audioData = this.media.stopAudioRecording(true);
-    
-    if (!audioData) return;
-    
+  async handleMediaSave() {
     try {
-      // Получаем геолокацию
+      await this.media.stopRecording(true);
+      const mediaData = this.media.getRecordedMedia();
+
       const position = await this.geolocation.get();
-      
-      // Добавляем аудио-сообщение в ленту
-      this.renderAudioItem(audioData, position);
-      
-      // Восстанавливаем кнопки
-      this.renderDefaultButtons();
+
+      if (mediaData.type === 'audio') this.renderAudioItem(mediaData, position);
+      if (mediaData.type === 'video') this.renderVideoItem(mediaData, position);
+     
     } catch (error) {
-      console.error("Ошибка добавления аудио:", error);
+      console.error("Ошибка добавления медиа:", error);
+
+    } finally {
       this.renderDefaultButtons();
     }
   }
@@ -137,6 +132,28 @@ export default class TimeLine {
             Ваш браузер не поддерживает аудио элементы.
           </audio>
           <div class="audio-duration">${this.formatDuration(audioData.duration)}</div>
+          <div class="line_geolocation">
+            [${position.latitude}, ${position.longitude}] 👁️
+          </div>
+        </div>
+        <div class="line_time">${date}</div>
+      </div>
+    `;
+
+    this.lineList.insertAdjacentHTML('afterbegin', item);
+  }
+
+  async renderVideoItem(videoData, position) {
+    const date = this.getDate();
+    
+    const item = `
+      <div class="line_item">
+        <div class="line_content">
+          <video controls class="video-player" poster="" style="max-width: 100%;">
+            <source src="${videoData.url}" type="video/webm">
+            Ваш браузер не поддерживает видео элементы.
+          </video>
+          <div class="media-duration">${this.formatDuration(videoData.duration)}</div>
           <div class="line_geolocation">
             [${position.latitude}, ${position.longitude}] 👁️
           </div>

@@ -4,8 +4,8 @@ export default class Geolocation {
     this.form = null;
     this.input = null;
     this.position = null;
-    this.resolvePosition = null; // Для разрешения промиса
-    this.rejectPosition = null;  // Для отклонения промиса
+    this.resolvePosition = null;
+    this.rejectPosition = null; 
   }
 
   async get() {
@@ -40,9 +40,9 @@ export default class Geolocation {
         },
 
         {
-          enableHighAccuracy: true, // Высокая точность (GPS)
-          timeout: 10000,           // Макс. время ожидания (10 сек)
-          maximumAge: 0             // Запрет кэширования
+          enableHighAccuracy: true, 
+          timeout: 10000,           
+          maximumAge: 0             
         }
       );
     });
@@ -50,11 +50,9 @@ export default class Geolocation {
 
   getCustomPosition() {
     return new Promise((resolve, reject) => {
-      // Сохраняем функции разрешения/отклонения
       this.resolvePosition = resolve;
       this.rejectPosition = reject;
       
-      // Открываем модальное окно
       this.openModal();
     });
   }
@@ -158,5 +156,4 @@ export default class Geolocation {
     this.promise = null;
     this.position = null;
   }
-
 }
