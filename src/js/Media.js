@@ -118,6 +118,8 @@ export default class Media {
   }
 
   openModal() {
+    if (document.querySelector('.media_modal')) return;
+
     document.body.insertAdjacentHTML('afterbegin', this.renderModal());
     const form = document.querySelector('.media_modal');
     const btn = document.querySelector('.submit_btn');
