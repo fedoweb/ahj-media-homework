@@ -146,6 +146,15 @@ export default class Geolocation {
       throw new Error('Координаты должны быть числами');
     }
 
+    console.log(latitude, longitude);
+
+    if (latitude > 90 || latitude < -90) {
+      throw new Error('Значение широты должно быть в диапазоне от -90 до 90');
+    } 
+    if (longitude > 180 || longitude < -180) {
+      throw new Error('Значение долготы должно быть в диапазоне от -180 до 180');
+    } 
+
     return {
       latitude: latitude.toFixed(5),
       longitude: longitude.toFixed(5)

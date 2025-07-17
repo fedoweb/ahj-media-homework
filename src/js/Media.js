@@ -169,7 +169,7 @@ export default class Media {
 
   renderModal() {
     return `
-      <form action="" class="media_modal line_item">
+      <form action="" class="media_modal">
         <p class="media_modal_text">Что-то пошло не так...</p>
         <p class="media_modal_text">К сожалению, нам не удалось получить доступ к
         микрофону или камере, возможно, браузер не поддерживает запись медиа или

@@ -1,5 +1,5 @@
-import Geolocation from "./Geolocation";
-import Media from "./Media";
+import Geolocation from "./Geolocation.js";
+import Media from "./Media.js";
 
 export default class TimeLine {
   constructor(container) {

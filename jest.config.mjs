@@ -1,9 +1,11 @@
+
 export default {
-    testEnvironment: 'node',
+    testEnvironment: 'jsdom',
     transform: {
-        '^.+\\.js$': 'babel-jest',
+        '^.+\\.jsx?$': 'babel-jest', // Транспилирование всех js/jsx файлов через Babel
     },
     moduleNameMapper: {
-        '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+        '\\.(css|less|scss|sass)$': 'identity-obj-proxy', // Стилизация для тестов
     },
+    transformIgnorePatterns: ['/node_modules/', '/packages/(?!my-project)/'], // Исключения для трансформирования
 };
