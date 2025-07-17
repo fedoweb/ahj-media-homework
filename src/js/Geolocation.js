@@ -58,6 +58,9 @@ export default class Geolocation {
   }
 
   openModal() {
+    if (this.container.querySelector('.custom_geolocation')) return;
+    document.activeElement.blur();
+
     this.container.insertAdjacentHTML('beforeend', this.renderModal());
     this.form = this.container.querySelector('.custom_geolocation');
     this.input = this.form.querySelector('.custom_geolocation_content');
@@ -71,7 +74,13 @@ export default class Geolocation {
 
   onInput = (e) => {
     e.target.setCustomValidity('');
-  }
+
+    // Обработчик нажатия Enter
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Блокируем автоматическое поведение Enter
+      this.form.dispatchEvent(new Event('submit', { bubbles: true }));
+    }
+  };
 
   onClick = (e) => {
     e.preventDefault();
@@ -111,11 +120,11 @@ export default class Geolocation {
           ваше местоположение, пожалуйста, дайте разрешение на использование
           геолокации, либо введите координаты вручную.</p>
         <p class="custom_geolocation_text">Широта и долгота через запятую</p>
-        <input type="text" class="custom_geolocation_content" placeholder="Например, 51.12345, -0.12345" required>
+        <input type="text" class="custom_geolocation_content" placeholder="Например, 51.12345, -0.12345" required autofocus>
 
         <div class="custom_geolocation_btn">
-          <button class="cancel_btn geolocation_btn">Отмена</button>
           <button class="submit_btn geolocation_btn" type="submit">ОК</button>
+          <button class="cancel_btn geolocation_btn">Отмена</button> 
         </div>   
       </form>
     `;

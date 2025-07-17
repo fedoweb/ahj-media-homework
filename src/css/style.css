@@ -93,6 +93,9 @@
 }
 
 .custom_geolocation_btn {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
   margin-left: auto;
   margin-right: 0;
 }
