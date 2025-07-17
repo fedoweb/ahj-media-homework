@@ -1009,6 +1009,7 @@ var Media = /*#__PURE__*/function () {
   }, {
     key: "openModal",
     value: function openModal() {
+      if (document.querySelector('.media_modal')) return;
       document.body.insertAdjacentHTML('afterbegin', this.renderModal());
       var form = document.querySelector('.media_modal');
       var btn = document.querySelector('.submit_btn');
